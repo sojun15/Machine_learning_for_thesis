@@ -54,3 +54,21 @@ drop is used to remove row of specific index value
 df = pd.read_csv('data.csv')
 df.fillna(130, inplace = True)
 
+## plot diagram
+- if we want to plat diagram for all column then use
+ds = pd.read_csv('heart_disease.csv')
+ds.plot()
+plt.show()
+
+- if we want to plat diagram only two column with x and y axix then use this
+ds = pd.read_csv('heart_disease.csv')
+ds.plot(kind='scatter',y='target',x='cp')
+plt.show()
+
+## correlation between different column
+- if i see summary of correlation then use (truncate some column)
+print(ds.corr())
+- if i see all column correlation then use 
+correlation_matrix = ds.corr()
+pd.set_option('display.max_columns', None)  // Set option to display all columns
+print(correlation_matrix)
